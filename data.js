@@ -86,8 +86,11 @@ const timeTable = {
         'MT418':'09:00',
         'IT306':'10:00',
         'IT341':'13:30',
-        'dummy':'23:50'
+        // 'dummy':'23:50'
     }
+    // '6':{
+    //     'dummy':'00:18'
+    // }
 }
 
 module.exports = {classes,timeTable}

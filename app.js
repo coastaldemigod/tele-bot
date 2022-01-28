@@ -39,7 +39,8 @@ let repeat = 15000
 
 setInterval(()=>{
     dt=new Date()
-    console.log(dt.getDay(),dt.getHours(),dt.getMinutes(),dt.getDate())
+    console.log(dt.getUTCDay(),dt.getUTCHours(),dt.getUTCMinutes(),dt.getUTCDate())
+    // console.log(dt.getDay(),dt.getHours(),dt.getMinutes(),dt.getDate())
     for(let day in timeTable)
     {
         // console.log(day);
@@ -48,7 +49,13 @@ setInterval(()=>{
             for(let clas in timeTable[day])
             {
                 // console.log(clas);
-                if(dt.getHours()==Number(timeTable[day][clas].split(':')[0]) && dt.getMinutes()==Number(timeTable[day][clas].split(':')[1]))
+
+                let curMin=dt.getUTCHours()*60+dt.getUTCMinutes();
+                let claMin=Number(timeTable[day][clas].split(':')[0])*60+Number(timeTable[day][clas].split(':')[1])
+                curMin=(curMin+330)%1440; // 5:30 adding to UTC to convert 
+                // console.log(curMin,claMin)
+                if(curMin==claMin)
+                // if(dt.getHours()==Number(timeTable[day][clas].split(':')[0]) && dt.getMinutes()==Number(timeTable[day][clas].split(':')[1]))
                 {
                     // console.log(dt.getHours(),dt.getMinutes())
                     for(let sub in classes)
