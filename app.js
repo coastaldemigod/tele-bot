@@ -17,13 +17,29 @@ const baseUrl=process.env.BASEURL
 const chatId=process.env.CHATID
 // const port = process.env.PORT || 5000
 
-let dt=new Date()
+console.log("app started")
 
+let message="app has started!!"
+let sendText='text='+message
+let fullMessage=baseUrl+'/sendMessage?'+chatId+'&'+sendText;
+
+try{
+    axios.get(fullMessage)
+    .then( (res) => {
+    console.log('sent to telegram')
+})
+}
+catch(err)
+{
+    console.log(err);
+}
+
+let dt=new Date()
 let repeat = 15000
 
 setInterval(()=>{
     dt=new Date()
-    // console.log(dt.getDay(),dt.getHours(),dt.getMinutes(),dt.getDate())
+    console.log(dt.getDay(),dt.getHours(),dt.getMinutes(),dt.getDate())
     for(let day in timeTable)
     {
         // console.log(day);
@@ -40,9 +56,9 @@ setInterval(()=>{
                         // console.log(sub);
                         if(classes[sub]['subcode']==clas)
                         {
-                            let message=classes[sub]['sub']+' at '+classes[sub]['link']
-                            let sendText='text='+message
-                            let fullMessage=baseUrl+'/sendMessage?'+chatId+'&'+sendText;
+                            message=classes[sub]['sub']+' at '+classes[sub]['link']
+                            sendText='text='+message
+                            fullMessage=baseUrl+'/sendMessage?'+chatId+'&'+sendText;
                             // console.log(fullMessage)
                             try{
                                 axios.get(fullMessage)
