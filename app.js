@@ -8,14 +8,14 @@ if(process.env.BASEURL==undefined || process.env.CHATID==undefined)
     process.exit(-1)
 }
 
-const server = http.createServer((req,res)=>{
-    console.log('response sent to server')
-    res.end('working');
-})
+// const server = http.createServer((req,res)=>{
+//     console.log('response sent to server')
+//     res.end('working');
+// })
 
 const baseUrl=process.env.BASEURL
 const chatId=process.env.CHATID
-const port = process.env.PORT || 5000
+// const port = process.env.PORT || 5000
 
 let dt=new Date()
 
@@ -63,4 +63,4 @@ setInterval(()=>{
     }
 },repeat)
 
-server.listen(port);
+// server.listen(port);
