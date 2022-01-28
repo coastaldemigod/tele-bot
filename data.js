@@ -49,11 +49,11 @@ const classes =[
         subcode:'MT204',
         link:'https://teams.microsoft.com/l/team/19%3aXUgybX5Cu-R5GoUggxsOv0vQL_tCjZw9iVkrJshuroo1%40thread.tacv2/conversations?groupId=ded285ea-c93c-419c-8814-e2660e209f8a&tenantId=12b4fbf9-dea8-4490-bede-9cc40309ad61'
     },
-    // {
-    //     sub:'dummy',
-    //     subcode:'dummy',
-    //     link:'dummy'
-    // }
+    {
+        sub:'dummy',
+        subcode:'dummy',
+        link:'dummy'
+    }
 ]
 
 const timeTable = {
@@ -76,7 +76,6 @@ const timeTable = {
         'IT340':'11:00',
         'IT307':'12:00',
         'CS308':'13:30',
-        // 'dummy':'22:10'
     },
     '4':{
         'IT340':'12:00',
@@ -86,7 +85,8 @@ const timeTable = {
     '5':{
         'MT418':'09:00',
         'IT306':'10:00',
-        'IT341':'13:30'
+        'IT341':'13:30',
+        // 'dummy':'23:21'
     }
 }
 
